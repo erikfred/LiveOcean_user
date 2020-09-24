@@ -21,15 +21,15 @@
 # defaults
 roms2="BLANK"
 
-if [ $HOME == "/Users/pm8" ] ; then
+if [ $HOME == "/Users/erikfred" ] ; then
   lo_env='pm_mac'
-  parent=$HOME"/Documents/"
+  parent=$HOME"/Documents/ROMS/"
   LO=$parent"LiveOcean/"
   data=$parent"LiveOcean_data/"
   LOo=$parent"LiveOcean_output/"
   roms=$parent"LiveOcean_roms/"
   which_matlab="/Applications/MATLAB_R2020a.app/bin/matlab"
-  
+
 elif [ $HOME == "/home/parker" ] && [[ $HOSTNAME == *"fjord"* ]] ; then
   lo_env='pm_fjord'
   parent="/data1/parker/"
@@ -37,44 +37,6 @@ elif [ $HOME == "/home/parker" ] && [[ $HOSTNAME == *"fjord"* ]] ; then
   data=$parent"LiveOcean_data/"
   LOo=$parent"LiveOcean_output/"
   roms="/pmr1/parker/LiveOcean_roms/"
-  which_matlab="/usr/local/bin/matlab"
-    
-elif [ $HOME == "/home/parker" ] && [[ $HOSTNAME == *"boiler"* ]] ; then
-  lo_env='pm_boiler'
-  parent="/data1/parker/"
-  LO=$parent"LiveOcean/"
-  data="/fjdata1/parker/LiveOcean_data/"
-  LOo=$parent"LiveOcean_output/"
-  roms=$parent"LiveOcean_roms/"
-  roms2="/pmr1/parker/LiveOcean_roms/"
-  which_matlab="/usr/local/bin/matlab"
-  
-elif [ $HOME == "/home/parker" ] && [[ $HOSTNAME == *"perigee"* ]] ; then
-  lo_env='pm_perigee'
-  parent="/data1/parker/"
-  LO=$parent"LiveOcean/"
-  data="/data1/parker/LiveOcean_data/"
-  LOo=$parent"LiveOcean_output/"
-  roms=$parent"LiveOcean_roms/"
-  roms2="/pmr1/parker/LiveOcean_roms/"
-  which_matlab="/usr/local/bin/matlab"
-
-elif [ $HOME == "/home/parker" ] && [[ $HOSTNAME == *"gaggle"* ]] ; then
-  lo_env='pm_gaggle'
-  parent="/fjdata1/parker/"
-  LO=$parent"LiveOcean/"
-  data=$parent"LiveOcean_data/"
-  LOo=$parent"LiveOcean_output/"
-  roms="/pmr1/parker/LiveOcean_roms/"
-  which_matlab="/usr/local/bin/matlab"
-  
-elif [ $HOME == "/usr/lusers/pmacc" ] || [ $HOME == "/usr/lusers/darrd" ] ; then
-  lo_env='pm_mox'
-  parent="/gscratch/macc/parker/"
-  LO=$parent"LiveOcean/"
-  data=$parent"LiveOcean_data/"
-  LOo=$parent"LiveOcean_output/"
-  roms=$parent"LiveOcean_roms/"
   which_matlab="/usr/local/bin/matlab"
 
 # If none of the above apply ASSUME that we are on fjord.
@@ -86,7 +48,7 @@ else
   LOo=$parent"LiveOcean_output/"
   roms="/pmr1/parker/LiveOcean_roms/"
   which_matlab="/usr/local/bin/matlab"
-  
+
 fi
 
 # write info to a temporary file for use by other programs
